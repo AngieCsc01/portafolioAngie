@@ -1,65 +1,54 @@
-import Image from "next/image";
+import React from 'react';
+import './page.css'; // Asegúrate de que este archivo exista para los estilos
 
-export default function Home() {
+const Page = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className="portfolio-page">
+      {/* SECCIÓN SUPERIOR: ENCABEZADO Y FOTO GRANDE */}
+      <header className="hero-section">
+        {/* Espacio para la imagen grande de fondo/primer plano */}
+        <div className="hero-image-container">
+          <img
+            src="ruta/a/tu/imagen_grande_angie.jpg" // **REEMPLAZA ESTO** con la ruta de tu imagen
+            alt="Angie Casco"
+            className="hero-image"
+          />
+        </div>
+
+        <div className="hero-text-overlay">
+          <div className="sun-icon-top"></div> {/* Icono o elemento decorativo (se estilizará con CSS) */}
+          <h1>ANGIE CASCO</h1>
+          <p className="subtitle">ESTUDIANTE DE CONTADURÍA | VOLUNTARIA APASIONADA POR LA INNOVACIÓN EDUCATIVA</p>
+          <a href="#portafolio" className="portfolio-button">PORTAFOLIO PERSONAL</a>
+        </div>
+      </header>
+
+      {/* SECCIÓN INFERIOR: PERFIL Y DESCRIPCIÓN */}
+      <section className="profile-section">
+        <div className="profile-left">
+          <div className="sun-icon-side"></div> {/* Icono o elemento decorativo */}
+          <div className="profile-image-container">
+            <img
+              src="ruta/a/tu/imagen_perfil_pequeña.jpg" // **REEMPLAZA ESTO** con la ruta de la foto pequeña
+              alt="Angie Casco perfil"
+              className="profile-image"
+            />
+          </div>
+        </div>
+
+        <div className="profile-right">
+          <p className="intro-text">
+            Estudiante con formación en contabilidad,
+            dominio del inglés y habilidades
+            interpersonales.
+          </p>
+          <p className="detail-text">
+            Estudiante de Educación Media en el área de Contaduría, con experiencia en proyectos académicos, liderazgo estudiantil y participación en diversos proyectos tecnológicos junto a jóvenes de mi edad. Me caracterizo por la responsabilidad, la creatividad y la disposición para trabajar en equipo. Interesada en seguir creciendo en los ámbitos administrativo, educativo y tecnológico.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      </section>
     </div>
   );
-}
+};
+
+export default Page;

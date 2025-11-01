@@ -1,0 +1,168 @@
+/* Variables para colores (ajusta según tus preferencias) */
+:root {
+  --dark-blue: #090e17; /* Fondo oscuro */
+  --light-text: #ffffff;
+  --accent-color: #f7e099; /* Color similar al beige/amarillo claro de los iconos */
+}
+
+/* Estilos Generales */
+body {
+  margin: 0;
+  font-family: sans-serif; /* Usa una fuente similar a la del ejemplo */
+}
+
+.portfolio-page {
+  background-color: var(--dark-blue);
+  color: var(--light-text);
+}
+
+/* --- SECCIÓN SUPERIOR --- */
+
+.hero-section {
+  position: relative;
+  height: 90vh; /* Altura de la sección superior */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-image-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* El efecto blanco y negro se aplica aquí: */
+  filter: grayscale(100%) brightness(80%); 
+}
+
+.hero-text-overlay {
+  position: relative;
+  z-index: 10;
+  padding: 20px;
+}
+
+.hero-text-overlay h1 {
+  font-size: 3em;
+  letter-spacing: 5px;
+  margin: 0;
+  font-weight: 300;
+}
+
+.hero-text-overlay .subtitle {
+  font-size: 1em;
+  margin-top: 5px;
+  font-weight: 400;
+  color: #cccccc;
+}
+
+/* Botón PORTAFOLIO PERSONAL */
+.portfolio-button {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 10px 20px;
+  border: 1px solid var(--light-text);
+  color: var(--light-text);
+  text-decoration: none;
+  font-size: 0.8em;
+  letter-spacing: 2px;
+}
+
+/* Icono Sol (sección superior) */
+.sun-icon-top {
+  /* Esto simula la forma del sol con un borde y rotación */
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+  border: 1px solid var(--light-text);
+  transform: rotate(45deg); /* Para darle la apariencia de rayos */
+  /* Puedes usar un SVG o un ::before/::after más complejo para la forma exacta */
+}
+
+
+/* --- SECCIÓN INFERIOR --- */
+
+.profile-section {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 40px;
+  gap: 50px;
+  align-items: center;
+}
+
+.profile-left {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end; /* Alinea la imagen a la derecha del contenedor */
+  position: relative;
+}
+
+.profile-image-container {
+  width: 250px; /* Tamaño de la foto de perfil */
+  height: 320px; 
+  z-index: 2; /* Para que esté sobre la forma decorativa */
+  position: relative;
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Icono Sol (sección inferior) - Forma decorativa */
+.sun-icon-side {
+  position: absolute;
+  width: 250px; 
+  height: 250px; 
+  background-color: var(--accent-color);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); /* Forma básica, ajusta el clip-path para la forma del sol irregular */
+  left: 20px; /* Posiciona la forma detrás y a la izquierda de la imagen */
+  top: 30px;
+  z-index: 1;
+  /* Necesitarás ajustar esta propiedad clip-path para que la forma sea exactamente como la del sol en la imagen. */
+}
+
+.profile-right {
+  flex: 2; /* Ocupa más espacio para el texto */
+  padding-left: 20px;
+}
+
+.profile-right .intro-text {
+  font-size: 1.2em;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.profile-right .detail-text {
+  line-height: 1.8;
+  color: #cccccc;
+}
+
+/* Responsive básico para móviles */
+@media (max-width: 768px) {
+  .hero-section {
+    height: 70vh;
+  }
+  .profile-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  .profile-left {
+    justify-content: center;
+  }
+  .sun-icon-side {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
