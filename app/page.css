@@ -1,14 +1,16 @@
 /* Variables para colores (ajusta según tus preferencias) */
 :root {
-  --dark-blue: #090e17; /* Fondo oscuro */
+  --dark-blue: #090e17; /* Fondo oscuro (header, actividad) */
+  --light-background: #f0ede6; /* Fondo claro (habilidades, contacto) */
   --light-text: #ffffff;
+  --dark-text: #2c2c2c;
   --accent-color: #f7e099; /* Color similar al beige/amarillo claro de los iconos */
 }
 
 /* Estilos Generales */
 body {
   margin: 0;
-  font-family: sans-serif; /* Usa una fuente similar a la del ejemplo */
+  font-family: 'Times New Roman', serif; /* Usando una fuente más clásica para el texto general */
 }
 
 .portfolio-page {
@@ -16,11 +18,21 @@ body {
   color: var(--light-text);
 }
 
-/* --- SECCIÓN SUPERIOR --- */
+.section-title-light {
+    color: var(--dark-text);
+    text-align: center;
+    font-size: 2em;
+    font-weight: 500;
+    margin-bottom: 50px;
+}
+
+/* ----------------------------------------------------------- */
+/* --- PARTE 1: SECCIÓN SUPERIOR Y PERFIL (Estilos previos) --- */
+/* ----------------------------------------------------------- */
 
 .hero-section {
   position: relative;
-  height: 90vh; /* Altura de la sección superior */
+  height: 90vh; 
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -40,7 +52,6 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* El efecto blanco y negro se aplica aquí: */
   filter: grayscale(100%) brightness(80%); 
 }
 
@@ -64,7 +75,6 @@ body {
   color: #cccccc;
 }
 
-/* Botón PORTAFOLIO PERSONAL */
 .portfolio-button {
   display: inline-block;
   margin-top: 30px;
@@ -78,18 +88,13 @@ body {
 
 /* Icono Sol (sección superior) */
 .sun-icon-top {
-  /* Esto simula la forma del sol con un borde y rotación */
   width: 50px;
   height: 50px;
   margin: 0 auto 10px;
   border-radius: 50%;
   border: 1px solid var(--light-text);
-  transform: rotate(45deg); /* Para darle la apariencia de rayos */
-  /* Puedes usar un SVG o un ::before/::after más complejo para la forma exacta */
+  transform: rotate(45deg); 
 }
-
-
-/* --- SECCIÓN INFERIOR --- */
 
 .profile-section {
   display: flex;
@@ -103,15 +108,16 @@ body {
 .profile-left {
   flex: 1;
   display: flex;
-  justify-content: flex-end; /* Alinea la imagen a la derecha del contenedor */
+  justify-content: flex-end; 
   position: relative;
 }
 
 .profile-image-container {
-  width: 250px; /* Tamaño de la foto de perfil */
+  width: 250px; 
   height: 320px; 
-  z-index: 2; /* Para que esté sobre la forma decorativa */
+  z-index: 2; 
   position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .profile-image {
@@ -126,15 +132,15 @@ body {
   width: 250px; 
   height: 250px; 
   background-color: var(--accent-color);
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); /* Forma básica, ajusta el clip-path para la forma del sol irregular */
-  left: 20px; /* Posiciona la forma detrás y a la izquierda de la imagen */
+  /* Esta es una aproximación de la forma del sol/rayos */
+  clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%, 0 70%, 20% 50%, 0 30%); 
+  left: 20px; 
   top: 30px;
   z-index: 1;
-  /* Necesitarás ajustar esta propiedad clip-path para que la forma sea exactamente como la del sol en la imagen. */
 }
 
 .profile-right {
-  flex: 2; /* Ocupa más espacio para el texto */
+  flex: 2; 
   padding-left: 20px;
 }
 
@@ -149,20 +155,210 @@ body {
   color: #cccccc;
 }
 
-/* Responsive básico para móviles */
+
+/* ----------------------------------------------------------- */
+/* --- PARTE 2: NUEVOS ESTILOS --- */
+/* ----------------------------------------------------------- */
+
+/* SECCIÓN MIS HABILIDADES */
+.skills-section {
+    background-color: var(--light-background);
+    color: var(--dark-text);
+    padding: 80px 40px;
+}
+
+.skills-section .star-icon {
+    font-size: 0.8em;
+    color: var(--dark-blue);
+    margin: 0 15px;
+}
+
+.skills-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.skill-column {
+    flex-basis: 30%;
+}
+
+.skill-image-container {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--dark-blue); /* Borde alrededor de la imagen */
+}
+
+.skill-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.skill-column h3 {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.skill-column ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    font-size: 0.9em;
+    line-height: 1.6;
+}
+
+.skill-column ul li::before {
+    content: "•";
+    color: var(--dark-blue);
+    font-weight: bold;
+    display: inline-block; 
+    width: 1em;
+    margin-left: -1em;
+}
+
+/* SECCIÓN ACTIVIDAD PERSONAL */
+.activity-section {
+    background-color: var(--dark-blue);
+    color: var(--light-text);
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 40px;
+    gap: 80px;
+}
+
+.activity-left {
+    flex-basis: 35%;
+    position: relative;
+}
+
+.activity-left h2 {
+    font-size: 3em;
+    line-height: 1;
+    font-weight: 300;
+    position: relative;
+    z-index: 2;
+}
+
+.activity-right {
+    flex-basis: 65%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.activity-right h4 {
+    font-size: 1.2em;
+    margin: 0;
+    font-weight: 600;
+}
+
+.activity-dates {
+    font-size: 0.85em;
+    color: var(--accent-color);
+    margin: 5px 0 10px 0;
+}
+
+.activity-description {
+    line-height: 1.7;
+    margin-top: 0;
+}
+
+/* Icono Sol Actividad */
+.activity-sun-icon {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    /* Simulación de rayos solares */
+    clip-path: polygon(50% 0, 60% 20%, 80% 10%, 70% 30%, 90% 40%, 70% 50%, 90% 60%, 70% 70%, 80% 90%, 60% 80%, 50% 100%, 40% 80%, 20% 90%, 30% 70%, 10% 60%, 30% 50%, 10% 40%, 30% 30%, 20% 10%, 40% 20%);
+    top: -50px;
+    left: -50px;
+    z-index: 1;
+}
+
+/* SECCIÓN CONTACTAME */
+.contact-section {
+    background-color: var(--light-background);
+    color: var(--dark-text);
+    padding: 80px 40px;
+    text-align: center;
+}
+
+.contact-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-image-container {
+    width: 100%;
+    max-width: 450px; /* Ajusta el tamaño de la imagen */
+    margin: 30px auto 50px;
+    overflow: hidden;
+    filter: grayscale(100%) brightness(90%); 
+}
+
+.contact-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    padding-top: 20px;
+}
+
+.contact-item h4 {
+    font-weight: 600;
+    margin-bottom: 5px;
+    font-size: 1.1em;
+}
+
+.contact-item p {
+    font-size: 0.9em;
+    color: #555;
+}
+
+/* Responsive básico */
 @media (max-width: 768px) {
-  .hero-section {
-    height: 70vh;
-  }
-  .profile-section {
+  .profile-section, .activity-section {
     flex-direction: column;
     text-align: center;
+    padding: 40px 20px;
+  }
+  .skills-grid, .contact-links {
+    flex-direction: column;
+    gap: 40px;
   }
   .profile-left {
     justify-content: center;
+    margin-bottom: 50px;
   }
   .sun-icon-side {
     left: 50%;
     transform: translateX(-50%);
+  }
+  .activity-left {
+    text-align: left;
+    margin-bottom: 40px;
+  }
+  .activity-sun-icon {
+    left: 0;
+    top: -20px;
+  }
+  .skill-column ul {
+      text-align: center;
   }
 }
