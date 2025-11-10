@@ -9,7 +9,7 @@ const Page = () => {
         {/* Espacio para la imagen grande de fondo/primer plano */}
         <div className="hero-image-container">
           <img
-            src="ruta/a/tu/imagen_grande_angie.jpg" // Agregar luego
+            src="angie.jpeg" // Agregar luego
             alt="Angie Casco"
             className="hero-image"
           />
