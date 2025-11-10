@@ -9,7 +9,7 @@ const Page = () => {
         {/* Espacio para la imagen grande de fondo/primer plano */}
         <div className="hero-image-container">
           <img
-            src="angie.jpeg" // Agregar luego
+            src="angie.jpeg" // Cambiar debido a la calidad 
             alt="Angie Casco"
             className="hero-image"
           />
@@ -29,7 +29,7 @@ const Page = () => {
           <div className="sun-icon-side"></div>
           <div className="profile-image-container">
             <img
-              src="ruta/a/tu/imagen_perfil_pequeña.jpg" // Agregar luego
+              src="imagen_perfil_pequeña.jpeg" // Cambio realizado
               alt="Angie Casco perfil"
               className="profile-image"
             />
@@ -58,7 +58,7 @@ const Page = () => {
           {/* Columna 1 */}
           <div className="skill-column">
             <div className="skill-image-container">
-              <img src="ruta/a/tu/imagen_habilidad_1.jpg" alt="Área académica" className="skill-image" /> {/* Agregar luego */}
+              <img src="imagen_habilidad_1.png" alt="Área académica" className="skill-image" /> {/* cambio hecho */}
             </div>
             <h3>Área académica</h3>
             <ul>
@@ -71,7 +71,7 @@ const Page = () => {
           {/* Columna 2 */}
           <div className="skill-column">
             <div className="skill-image-container">
-              <img src="ruta/a/tu/imagen_habilidad_2.jpg" alt="Área personal" className="skill-image" /> {/* Agregar luego */}
+              <img src="imagen_habilidad_23.png" alt="Área personal" className="skill-image" /> {/* cambio hecho */}
             </div>
             <h3>Área personal</h3>
             <ul>
@@ -85,7 +85,7 @@ const Page = () => {
           {/* Columna 3 */}
           <div className="skill-column">
             <div className="skill-image-container">
-              <img src="ruta/a/tu/imagen_habilidad_3.jpg" alt="Área creativa" className="skill-image" /> {/* Agregar luego*/}
+              <img src="imagen_habilidad_3.png" alt="Área creativa" className="skill-image" /> {/* cambio hecho*/}
             </div>
             <h3>Área creativa</h3>
             <ul>
@@ -105,7 +105,7 @@ const Page = () => {
           <h2>Actividad personal</h2>
         </div>
         <div className="activity-right">
-          <h4>Voluntaria en Glowwing International</h4>
+          <h4>Voluntaria en Glasswwing International</h4>
           <p className="activity-dates">Años: Noviembre 2024 - Diciembre 2025</p>
           <p className="activity-description">Apoyo en actividades educativas y sociales dentro del programa de mentoría uno a uno, promoviendo valores y habilidades para la vida.</p>
 
@@ -125,7 +125,7 @@ const Page = () => {
         <div className="contact-content">
           <div className="contact-image-container">
             <img
-              src="ruta/a/tu/imagen_contacto_final.jpg" // Agregar luego
+              src="imagen_contacto_final.png" // Cambio hecho, cambiar color
               alt="Angie Casco en contacto"
               className="contact-image"
             />
