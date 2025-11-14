@@ -184,7 +184,7 @@ const Page = () => {
 
             {/* Imagen principal de la estudiante */}
 
-            <img src="angie.jpeg" alt="Angie Casco" className="main-hero-image" />
+            <img src="nueva2.jpg" alt="Angie Casco" className="main-hero-image" />
 
             {/* Elementos flotantes/decorativos */}
 
